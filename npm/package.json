@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/acrostic",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "Acrostic Puzzle Generator creates puzzles where the first letters of answer words spell out a hidden keyword.",
   "main": "index.js",
   "types": "index.d.ts",
