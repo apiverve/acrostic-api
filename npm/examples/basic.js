@@ -16,7 +16,7 @@ const api = new acrosticAPI({
 // Example query
 var query = {
   word: "HAPPY",
-  theme: "positive"
+  theme: "random"
 };
 
 // Make the API request using callback
