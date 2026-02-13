@@ -13,13 +13,7 @@ const API_URL = 'https://api.apiverve.com/v1/acrostic';
  */
 async function callAcrosticPuzzleGeneratorAPI() {
   try {
-    // Query parameters
-    const params &#x3D; new URLSearchParams({
-            word: &#x27;HAPPY&#x27;,
-            theme: &#x27;positive&#x27;
-        });
-
-    const response = await fetch(`${API_URL}?${params}`, {
+    const response = await fetch(API_URL, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
