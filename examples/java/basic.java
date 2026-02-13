@@ -12,13 +12,8 @@ public class BasicExample {
         AcrosticPuzzleGeneratorAPIClient client = new AcrosticPuzzleGeneratorAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Query parameters
-            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
-        parameters.put(&quot;word&quot;, &quot;HAPPY&quot;);
-        parameters.put(&quot;theme&quot;, &quot;positive&quot;);
-
-            // Execute the API request
-            APIResponse response = client.execute(parameters);
+            // Execute the API request (no parameters required)
+            APIResponse response = client.execute(null);
 
             // Check if the request was successful
             if (response.isSuccess()) {
