@@ -12,14 +12,12 @@ namespace APIVerve.API.AcrosticPuzzleGenerator
     {
         /// <summary>
         /// The keyword to spell out (3-15 letters)
-        /// Example: HAPPY
         /// </summary>
         [JsonProperty("word")]
         public string Word { get; set; }
 
         /// <summary>
         /// Theme: random, positive, nature, adventure, friendship, learning
-        /// Example: positive
         /// </summary>
         [JsonProperty("theme")]
         public string Theme { get; set; }
