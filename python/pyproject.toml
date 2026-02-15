@@ -1,17 +1,20 @@
 [project]
 name = "apiverve-acrosticpuzzlegenerator"
-version = "1.1.12"
+version = "1.1.13"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
 description = "Acrostic Puzzle Generator creates puzzles where the first letters of answer words spell out a hidden keyword."
-keywords = ["acrostic", "word puzzle", "hidden word", "first letters", "vocabulary"]
+keywords = []
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.7"
+license = "MIT"
+dependencies = [
+    "requests>=2.25.0"
+]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
     "Intended Audience :: Financial and Insurance Industry",
