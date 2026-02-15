@@ -1,1 +1,3 @@
-from .apiClient import AcrosticAPIClient
+from .apiClient import AcrosticAPIClient, AcrosticAPIClientError
+
+__all__ = ['AcrosticAPIClient', 'AcrosticAPIClientError']
