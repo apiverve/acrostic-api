@@ -44,7 +44,10 @@ from apiverve_acrosticpuzzlegenerator.apiClient import AcrosticAPIClient
 # Initialize the client with your APIVerve API key
 api = AcrosticAPIClient("[YOUR_API_KEY]")
 
-query = { "word": "HAPPY", "theme": "random" }
+query = {
+    "word": "HAPPY",
+    "theme": "random"
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "word": "HAPPY", "theme": "random" }
+query = {
+    "word": "HAPPY",
+    "theme": "random"
+}
 ```
 
 ###### Simple Request
@@ -160,7 +166,10 @@ from apiverve_acrosticpuzzlegenerator.apiClient import AcrosticAPIClient, Acrost
 
 api = AcrosticAPIClient("[YOUR_API_KEY]")
 
-query = { "word": "HAPPY", "theme": "random" }
+query = {
+    "word": "HAPPY",
+    "theme": "random"
+}
 
 try:
     result = api.execute(query)
@@ -181,7 +190,10 @@ from apiverve_acrosticpuzzlegenerator.apiClient import AcrosticAPIClient, Acrost
 
 api = AcrosticAPIClient("[YOUR_API_KEY]")
 
-query = { "word": "HAPPY", "theme": "random" }
+query = {
+    "word": "HAPPY",
+    "theme": "random"
+}
 
 try:
     result = api.execute(query)
@@ -215,7 +227,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_acrosticpuzzlegenerator.apiClient import AcrosticAPIClient, AcrosticAPIClientError
 
-query = { "word": "HAPPY", "theme": "random" }
+query = {
+    "word": "HAPPY",
+    "theme": "random"
+}
 
 # Using context manager ensures proper cleanup
 with AcrosticAPIClient("[YOUR_API_KEY]") as api:
@@ -241,7 +256,10 @@ from apiverve_acrosticpuzzlegenerator.apiClient import AcrosticAPIClient
 # Enable debug mode
 api = AcrosticAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "word": "HAPPY", "theme": "random" }
+query = {
+    "word": "HAPPY",
+    "theme": "random"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -256,8 +274,12 @@ from apiverve_acrosticpuzzlegenerator.apiClient import AcrosticAPIClient
 
 api = AcrosticAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "word": "HAPPY",
+    "theme": "random"
+}
+
 try:
-    query = { "word": "HAPPY", "theme": "random" }
     result = api.execute(query)
     print(result)
 finally:
