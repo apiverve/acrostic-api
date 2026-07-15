@@ -30,7 +30,7 @@ class acrosticWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/acrostic';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"word":{"type":"string","required":true},"theme":{"type":"string","required":false,"default":"random"}};
+        this.validationRules = {"word":{"type":"string","required":true},"theme":{"type":"string","required":false,"default":"random"},"image":{"type":"boolean","required":false,"default":false}};
     }
 
     /**
