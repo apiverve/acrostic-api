@@ -36,6 +36,13 @@ paths:
           required: false
           description: 'Theme: random, positive, nature, adventure, friendship, learning'
           example: positive
+        - name: image
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: Set to true to generate a downloadable puzzle image
+          example: true
       responses:
         '200':
           description: Successful Response
