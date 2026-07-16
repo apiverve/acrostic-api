@@ -21,5 +21,11 @@ namespace APIVerve.API.AcrosticPuzzleGenerator
         /// </summary>
         [JsonProperty("theme")]
         public string Theme { get; set; }
+
+        /// <summary>
+        /// Set to true to generate a downloadable puzzle image
+        /// </summary>
+        [JsonProperty("image")]
+        public bool? Image { get; set; }
     }
 }
