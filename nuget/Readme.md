@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.AcrosticPuzzleGenerator;
 
 class Program
 {
@@ -60,9 +60,10 @@ class Program
         // Initialize the API client
         var apiClient = new AcrosticPuzzleGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    word = "HAPPY",
-    theme = "random"
+        var queryOptions = new AcrosticPuzzleGeneratorQueryOptions {
+    Word = "HAPPY",
+    Theme = "random",
+    Image = true
 };
 
         // Make the API call
@@ -117,7 +118,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.AcrosticPuzzleGenerator;
 
 public class Example
 {
@@ -125,9 +126,10 @@ public class Example
     {
         var apiClient = new AcrosticPuzzleGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    word = "HAPPY",
-    theme = "random"
+        var queryOptions = new AcrosticPuzzleGeneratorQueryOptions {
+    Word = "HAPPY",
+    Theme = "random",
+    Image = true
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -150,7 +152,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.AcrosticPuzzleGenerator;
 
 public class Example
 {
@@ -158,9 +160,10 @@ public class Example
     {
         var apiClient = new AcrosticPuzzleGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    word = "HAPPY",
-    theme = "random"
+        var queryOptions = new AcrosticPuzzleGeneratorQueryOptions {
+    Word = "HAPPY",
+    Theme = "random",
+    Image = true
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -188,7 +191,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.AcrosticPuzzleGenerator;
 
 public class Example
 {
@@ -196,9 +199,10 @@ public class Example
     {
         var apiClient = new AcrosticPuzzleGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    word = "HAPPY",
-    theme = "random"
+        var queryOptions = new AcrosticPuzzleGeneratorQueryOptions {
+    Word = "HAPPY",
+    Theme = "random",
+    Image = true
 };
 
         try
@@ -241,7 +245,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.AcrosticPuzzleGenerator;
 
 public class Example
 {
@@ -253,9 +257,10 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    word = "HAPPY",
-    theme = "random"
+        var queryOptions = new AcrosticPuzzleGeneratorQueryOptions {
+    Word = "HAPPY",
+    Theme = "random",
+    Image = true
 };
 
         try
@@ -295,9 +300,10 @@ var apiClient = new AcrosticPuzzleGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    word = "HAPPY",
-    theme = "random"
+var queryOptions = new AcrosticPuzzleGeneratorQueryOptions {
+    Word = "HAPPY",
+    Theme = "random",
+    Image = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -322,9 +328,10 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    word = "HAPPY",
-    theme = "random"
+var queryOptions = new AcrosticPuzzleGeneratorQueryOptions {
+    Word = "HAPPY",
+    Theme = "random",
+    Image = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -341,9 +348,10 @@ var apiClient = new AcrosticPuzzleGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    word = "HAPPY",
-    theme = "random"
+var queryOptions = new AcrosticPuzzleGeneratorQueryOptions {
+    Word = "HAPPY",
+    Theme = "random",
+    Image = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -354,9 +362,10 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    word = "HAPPY",
-    theme = "random"
+var queryOptions = new AcrosticPuzzleGeneratorQueryOptions {
+    Word = "HAPPY",
+    Theme = "random",
+    Image = true
 };
 
 using (var apiClient = new AcrosticPuzzleGeneratorAPIClient("[YOUR_API_KEY]"))
@@ -416,7 +425,13 @@ using (var apiClient = new AcrosticPuzzleGeneratorAPIClient("[YOUR_API_KEY]"))
       }
     ],
     "lineCount": 5,
-    "html": "<html><head><title>Acrostic Puzzle</title><style>body {font-family: Arial, sans-serif; padding: 20px; max-width: 700px; margin: 0 auto;}h1 {text-align: center; color: #FF5722;}.intro {text-align: center; color: #666; margin-bottom: 30px;}.puzzle {margin: 20px 0;}.line {display: flex; align-items: center; margin: 10px 0; padding: 10px; background: #f5f5f5; border-radius: 5px;}.number {width: 30px; font-weight: bold; color: #FF5722;}.first-letter {width: 40px; height: 40px; background: #FF5722; color: white; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; border-radius: 5px; margin-right: 10px;}.blanks {display: flex; gap: 3px; margin-right: 15px;}.blank {width: 25px; height: 30px; border-bottom: 2px solid #333;}.clue {flex: 1; font-size: 14px; color: #666; font-style: italic;}.keyword {text-align: center; margin-top: 30px; padding: 20px; background: #FFF3E0; border-radius: 10px;}.keyword-letters {display: flex; justify-content: center; gap: 10px;}.keyword-letter {width: 40px; height: 40px; background: #FF5722; color: white; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; border-radius: 5px;}</style></head><body><h1>Acrostic Puzzle</h1><div class='intro'>Solve the clues. The first letters spell a word!</div><div class='puzzle'><div class='line'><span class='number'>1.</span><span class='first-letter'>H</span><span class='blanks'><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span></span><span class='clue'>1. Favored by hap, luck, or fortune; lucky; fortunate; successful; prosperous; s...</span></div><div class='line'><span class='number'>2.</span><span class='first-letter'>A</span><span class='blanks'><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span></span><span class='clue'>Causing amazement; very wonderful; as, amazing grace. -- A*maz'ing*ly, adv.</span></div><div class='line'><span class='number'>3.</span><span class='first-letter'>P</span><span class='blanks'><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span></span><span class='clue'>1. Possessing or enjoying peace; not disturbed by war, tumult, agitation, anxiet...</span></div><div class='line'><span class='number'>4.</span><span class='first-letter'>P</span><span class='blanks'><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span></span><span class='clue'>1. Possessing or enjoying peace; not disturbed by war, tumult, agitation, anxiet...</span></div><div class='line'><span class='number'>5.</span><span class='first-letter'>Y</span><span class='blanks'><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span></span><span class='clue'>1. Not yet mature or aged; young. 'Two youthful knights.' Dryden.  Also used fig...</span></div></div><div class='keyword'><p>Hidden word:</p><div class='keyword-letters'><div class='keyword-letter'>?</div><div class='keyword-letter'>?</div><div class='keyword-letter'>?</div><div class='keyword-letter'>?</div><div class='keyword-letter'>?</div></div></div></body></html>"
+    "html": "<html><head><title>Acrostic Puzzle</title><style>body {font-family: Arial, sans-serif; padding: 20px; max-width: 700px; margin: 0 auto;}h1 {text-align: center; color: #FF5722;}.intro {text-align: center; color: #666; margin-bottom: 30px;}.puzzle {margin: 20px 0;}.line {display: flex; align-items: center; margin: 10px 0; padding: 10px; background: #f5f5f5; border-radius: 5px;}.number {width: 30px; font-weight: bold; color: #FF5722;}.first-letter {width: 40px; height: 40px; background: #FF5722; color: white; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; border-radius: 5px; margin-right: 10px;}.blanks {display: flex; gap: 3px; margin-right: 15px;}.blank {width: 25px; height: 30px; border-bottom: 2px solid #333;}.clue {flex: 1; font-size: 14px; color: #666; font-style: italic;}.keyword {text-align: center; margin-top: 30px; padding: 20px; background: #FFF3E0; border-radius: 10px;}.keyword-letters {display: flex; justify-content: center; gap: 10px;}.keyword-letter {width: 40px; height: 40px; background: #FF5722; color: white; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; border-radius: 5px;}</style></head><body><h1>Acrostic Puzzle</h1><div class='intro'>Solve the clues. The first letters spell a word!</div><div class='puzzle'><div class='line'><span class='number'>1.</span><span class='first-letter'>H</span><span class='blanks'><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span></span><span class='clue'>1. Favored by hap, luck, or fortune; lucky; fortunate; successful; prosperous; s...</span></div><div class='line'><span class='number'>2.</span><span class='first-letter'>A</span><span class='blanks'><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span></span><span class='clue'>Causing amazement; very wonderful; as, amazing grace. -- A*maz'ing*ly, adv.</span></div><div class='line'><span class='number'>3.</span><span class='first-letter'>P</span><span class='blanks'><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span></span><span class='clue'>1. Possessing or enjoying peace; not disturbed by war, tumult, agitation, anxiet...</span></div><div class='line'><span class='number'>4.</span><span class='first-letter'>P</span><span class='blanks'><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span></span><span class='clue'>1. Possessing or enjoying peace; not disturbed by war, tumult, agitation, anxiet...</span></div><div class='line'><span class='number'>5.</span><span class='first-letter'>Y</span><span class='blanks'><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span><span class='blank'></span></span><span class='clue'>1. Not yet mature or aged; young. 'Two youthful knights.' Dryden.  Also used fig...</span></div></div><div class='keyword'><p>Hidden word:</p><div class='keyword-letters'><div class='keyword-letter'>?</div><div class='keyword-letter'>?</div><div class='keyword-letter'>?</div><div class='keyword-letter'>?</div><div class='keyword-letter'>?</div></div></div></body></html>",
+    "image": {
+      "imageName": "8b67d4ec-c262-4f7b-9cf1-b8c2766e8c54_acrostic.png",
+      "format": ".png",
+      "downloadURL": "https://storage.googleapis.com/apiverve/APIData/acrostic/8b67d4ec-c262-4f7b-9cf1-b8c2766e8c54_acrostic.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766009969&Signature=IBbnpk61J5uW7bsfoqRwceF7weeBO%2Bq63BKH7LZpXLhZJk1vYISzRXy%2BPeZnH0t4h%2FvK%2BIJCv84THbV5ym9KkdLUXJK3wYkh8XoyZz%2FyFsBNJ6YCtFLkb0F3AULXyOGEcJ3F3mz4f2oS9P6Wtx4bX8NKVs3B316pY0aJzKo%2Fm5Lnv81i9y%2BRA7EMc9f7M8N9Nin08T%2F4K3W3LxO%2FJUcwocs7UTAORbhCSTqbSn2eIhJLKAN%2B4gSvDghzigwHT9THBVAD1VHgmkfxPNKMqFcarnah7Lfh78RcZM5Zfubl50YgBLVwwwQ%2Bp0Sxbjgeb0osdEkHwAfXbKP2bmA9%2B3TrLA%3D%3D",
+      "expires": 1766009969599
+    }
   }
 }
 ```
