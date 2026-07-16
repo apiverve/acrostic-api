@@ -25,6 +25,9 @@ namespace APIVerve.API.AcrosticPuzzleGenerator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -39,16 +42,34 @@ namespace APIVerve.API.AcrosticPuzzleGenerator
         public Line[] Lines { get; set; }
 
         [JsonProperty("lineCount")]
-        public long LineCount { get; set; }
+        public long? LineCount { get; set; }
 
         [JsonProperty("html")]
         public string Html { get; set; }
+
+        [JsonProperty("image")]
+        public Image Image { get; set; }
+    }
+
+    public partial class Image
+    {
+        [JsonProperty("imageName")]
+        public string ImageName { get; set; }
+
+        [JsonProperty("format")]
+        public string Format { get; set; }
+
+        [JsonProperty("downloadURL")]
+        public Uri DownloadUrl { get; set; }
+
+        [JsonProperty("expires")]
+        public long? Expires { get; set; }
     }
 
     public partial class Line
     {
         [JsonProperty("position")]
-        public long Position { get; set; }
+        public long? Position { get; set; }
 
         [JsonProperty("letter")]
         public string Letter { get; set; }
@@ -57,9 +78,21 @@ namespace APIVerve.API.AcrosticPuzzleGenerator
         public string Answer { get; set; }
 
         [JsonProperty("letterCount")]
-        public long LetterCount { get; set; }
+        public long? LetterCount { get; set; }
 
         [JsonProperty("clue")]
         public string Clue { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
