@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -25,7 +25,8 @@ class AcrosticAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
         "word": {"type": "string", "required": True},
-        "theme": {"type": "string", "required": False, "default": "random"}
+        "theme": {"type": "string", "required": False, "default": "random"},
+        "image": {"type": "boolean", "required": False, "default": False}
     }
 
     # Format validation patterns
