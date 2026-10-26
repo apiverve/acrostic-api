@@ -46,11 +46,12 @@ final _formatPatterns = {
 
 /// Acrostic Puzzle Generator API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/acrostic?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/acrostic?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [word] (required) - The keyword to spell out (3-15 letters)
 /// * [theme] - Theme: random, positive, nature, adventure, friendship, learning
+/// * [image] - Set to true to generate a downloadable puzzle image
 class AcrosticClient {
   final String apiKey;
   final String baseUrl;
@@ -60,6 +61,7 @@ class AcrosticClient {
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
     'word': ValidationRule(type: 'string', required: true),
     'theme': ValidationRule(type: 'string', required: false),
+    'image': ValidationRule(type: 'boolean', required: false),
   };
 
   AcrosticClient(this.apiKey, {
