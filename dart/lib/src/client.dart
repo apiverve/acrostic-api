@@ -49,8 +49,8 @@ final _formatPatterns = {
 /// For more information, visit: https://apiverve.com/marketplace/acrostic?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
-/// * [word] (required) - The keyword to spell out (3-15 letters)
-/// * [theme] - Theme: random, positive, nature, adventure, friendship, learning
+/// * [word] (required) - The keyword to spell out, letters A-Z only (3-15 letters recommended, max 100) [maxLength: 100]
+/// * [theme] - Theme: random, positive, nature, adventure, friendship, learning (any other value is rejected)
 /// * [image] - Set to true to generate a downloadable puzzle image
 class AcrosticClient {
   final String apiKey;
@@ -59,7 +59,7 @@ class AcrosticClient {
 
   /// Validation rules for parameters.
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
-    'word': ValidationRule(type: 'string', required: true),
+    'word': ValidationRule(type: 'string', required: true, maxLength: 100),
     'theme': ValidationRule(type: 'string', required: false),
     'image': ValidationRule(type: 'boolean', required: false),
   };
