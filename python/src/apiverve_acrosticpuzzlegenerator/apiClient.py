@@ -24,7 +24,7 @@ class ValidationError(AcrosticAPIClientError):
 class AcrosticAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "word": {"type": "string", "required": True},
+        "word": {"type": "string", "required": True, "maxLength": 100},
         "theme": {"type": "string", "required": False, "default": "random"},
         "image": {"type": "boolean", "required": False, "default": False}
     }
