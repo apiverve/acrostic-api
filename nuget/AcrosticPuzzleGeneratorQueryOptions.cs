@@ -11,13 +11,13 @@ namespace APIVerve.API.AcrosticPuzzleGenerator
     public class AcrosticPuzzleGeneratorQueryOptions
     {
         /// <summary>
-        /// The keyword to spell out (3-15 letters)
+        /// The keyword to spell out, letters A-Z only (3-15 letters recommended, max 100)
         /// </summary>
         [JsonProperty("word")]
         public string Word { get; set; }
 
         /// <summary>
-        /// Theme: random, positive, nature, adventure, friendship, learning
+        /// Theme: random, positive, nature, adventure, friendship, learning (any other value is rejected)
         /// </summary>
         [JsonProperty("theme")]
         public string Theme { get; set; }
